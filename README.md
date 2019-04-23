@@ -1,2 +1,2 @@
 # Grid-Usage
-grid usage example
+CSS grid usage example
