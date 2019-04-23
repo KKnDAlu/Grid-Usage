@@ -1,0 +1,128 @@
+$bg: #86a19e
+$lavender: #6c648b
+$clean: #dfdcf3
+$ban: #af473c
+
+*
+	box-sizing: border-box
+
+body
+	font-family: 'Roboto', sans-serif
+	font-size: 16px
+	font-weight: 400
+	background-color: $bg
+	color: $clean
+
+button
+	font-family: 'Roboto', sans-serif
+	font-size: 15px
+	font-weight: 500
+	padding: 10px 20px
+	border-radius: 5px
+	border: none
+	margin: 10px
+img
+	max-width: 100%
+
+.btn
+	color: $clean	
+	background-color: $lavender	
+	&:hover
+		cursor: pointer
+		background-color: darken($lavender, 10)
+	&_ban
+		background-color: $ban
+		&:hover
+			background-color: darken($ban, 10)
+
+.container
+	width: 90%
+	max-width: 1140px
+	margin: 0 auto
+
+.name
+	font-size: 18px
+.name, .rating
+	padding: 2px 10px
+.descr
+	padding: 10px
+
+.card
+	width: 100%
+	display: grid
+	grid-template-columns: repeat(8, 1fr)
+
+.name
+	grid-column: 1 / 6
+	grid-row: 1
+.rating
+	grid-column: 6 / 9
+	grid-row: 1	
+	text-align: right
+.photo
+	grid-column: 1 / 4
+	grid-row: 2 / 4
+.descr
+	grid-column: 4 / 9
+	grid-row: 2
+.buttons
+	grid-column: 4 / 9
+	grid-row: 3
+	display: flex
+	justify-content: flex-end
+	align-items: flex-end
+	flex-wrap: wrap
+.btn
+	flex-grow: 1
+
+@media (max-width: 828px)
+	.name
+		grid-column: 4 / 9
+		grid-row: 1
+		text-align: right
+	.rating		
+		grid-column: 5 / 9
+		grid-row: 2
+	.photo
+		grid-column: 1 / 4
+		grid-row: 1 / 5
+	.descr
+		grid-column: 1 / 9
+		grid-row: 5
+	.buttons
+		grid-column: 1 / 9
+		grid-row: 6
+
+@media (max-width: 520px)
+	.name
+		grid-column: 1 / 9
+		grid-row: 1
+		text-align: center
+	.rating		
+		grid-column: 1 / 9
+		grid-row: 2
+		text-align: center
+	.photo
+		grid-column: 1 / 4
+		grid-row: 4 / 6
+	.descr
+		grid-column: 1 / 9
+		grid-row: 3
+		text-align: center
+	.buttons
+		grid-column: 4 / 9
+		grid-row: 4 / 6
+		flex-direction: column
+		align-items: center
+
+@media (max-width: 480px)	
+	.container
+		width: 96%
+	.photo
+		grid-column: 1 / 9
+		grid-row: 4
+	.buttons
+		grid-column: 1 / 9
+		grid-row: 5
+	button
+		margin: 10px 0 4px 0
